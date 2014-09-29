@@ -1,7 +1,8 @@
 gulu
 ===========
 
-# setup
+## setup
+
 1. `npm install`
 2. `npm install -g imock`
 3. `gulp & gulp watch`
