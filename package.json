@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/dmccer/gulu-static/issues"
   },
-  "homepage": "https://github.com/dmccer/gulu-static"
+  "homepage": "https://github.com/dmccer/gulu-static",
+  "dependencies": {
+    "gulp": "^3.8.8"
+  }
 }
