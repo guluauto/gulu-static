@@ -1,0 +1,22 @@
+{
+  "name": "gulu-static",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dmccer/gulu-static.git"
+  },
+  "keywords": [
+    "gulu"
+  ],
+  "author": "Kane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmccer/gulu-static/issues"
+  },
+  "homepage": "https://github.com/dmccer/gulu-static"
+}
