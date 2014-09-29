@@ -43,4 +43,4 @@ gulp.task('watch', function () {
   gulp.watch(['./view/**/*'], ['html']);
 });
 
-gulp.task('default', ['clean', 'less', 'image', 'script', 'html']);
+gulp.task('default', ['less', 'image', 'script', 'html']);
