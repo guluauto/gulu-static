@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
-var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
@@ -21,20 +20,18 @@ gulp.task('less', function() {
     .pipe(gulp.dest('dist/img/'));
 });
 
-gulp.task('html', ['clean'], function () {
-  return gulp.src('./view/**/*.html')
+gulp.task('html', function () {
+  return gulp.src('./view/**/*')
     .pipe(gulp.dest('dist/view/'));
 });
 
-gulp.task('script', ['clean'], function () {
-  return gulp.src('./js/**/*.js')
-    .pipe(sourcemaps.init())
+gulp.task('script', function () {
+  return gulp.src('./js/**/*')
     .pipe(uglify())
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/js/'));
 });
 
-gulp.task('image', ['clean'], function() {
+gulp.task('image', function() {
   return gulp.src(['./less/common/img/**/*', './less/page/img/**/*'])
     .pipe(imagemin({optimizationLevel: 5}))
     .pipe(gulp.dest('dist/img/'));
@@ -43,6 +40,7 @@ gulp.task('image', ['clean'], function() {
 gulp.task('watch', function () {
   gulp.watch(['./less/**/*'], ['less']);
   gulp.watch(['./js/**/*'], ['script']);
+  gulp.watch(['./view/**/*'], ['html']);
 });
 
-gulp.task('default', ['less', 'image', 'script', 'html']);
+gulp.task('default', ['clean', 'less', 'image', 'script', 'html']);
