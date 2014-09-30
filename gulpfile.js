@@ -4,6 +4,8 @@ var path = require('path');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
+var exec = require('child_process').exec;
+var sys = require('sys');
 
 gulp.task('clean', function (cb) {
   del(['dist'], cb);
@@ -25,9 +27,12 @@ gulp.task('html', function () {
     .pipe(gulp.dest('dist/view/'));
 });
 
-gulp.task('script', function () {
-  return gulp.src('./js/**/*.js')
-    .pipe(gulp.dest('dist/js/'));
+gulp.task('script', function (cb) {
+  exec('r.js -o build.js', function(error, stdout, stderr) {
+    sys.puts(stdout);
+
+    cb();
+  });
 });
 
 gulp.task('image', function() {
