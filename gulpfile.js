@@ -41,7 +41,7 @@ gulp.task('image', function() {
     .pipe(gulp.dest('dist/img/'));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['clean'], function () {
   gulp.watch(['./less/**/*'], ['less']);
   gulp.watch(['./js/**/*'], ['script']);
   gulp.watch(['./view/**/*'], ['html']);
