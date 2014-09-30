@@ -26,8 +26,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('script', function () {
-  return gulp.src('./js/**/*')
-    .pipe(uglify())
+  return gulp.src('./js/**/*.js')
     .pipe(gulp.dest('dist/js/'));
 });
 

@@ -1,6 +1,4 @@
-/**
- * index
- */
-;(function (HOST) {
+require(['jquery'], function ($) {
+  console.log($);
   console.log('this is index page');
-})(window);
+});
